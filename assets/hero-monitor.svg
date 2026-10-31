@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Environmental monitor through-line: circuit to PCB to enclosure</title>
+  <defs>
+    <linearGradient id="gFloor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a242e"/>
+      <stop offset="55%" stop-color="#121820"/>
+      <stop offset="100%" stop-color="#0c1016"/>
+    </linearGradient>
+    <linearGradient id="gCopper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c47a45"/>
+      <stop offset="100%" stop-color="#e8a86a"/>
+    </linearGradient>
+    <linearGradient id="gSteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8aa4b8"/>
+      <stop offset="100%" stop-color="#4a6578"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#2a3a48" stroke-width="0.6" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="900" fill="url(#gFloor)"/>
+  <rect width="1440" height="900" fill="url(#grid)"/>
+
+  <!-- Circuit stage -->
+  <g transform="translate(120 220)" opacity="0.95">
+    <text x="0" y="-24" fill="#8aa4b8" font-family="ui-monospace, monospace" font-size="14" letter-spacing="0.12em">01 · CIRCUIT</text>
+    <rect x="0" y="0" width="320" height="200" rx="4" stroke="#3d5568" stroke-width="1.5" fill="#151c24"/>
+    <path d="M40 100 H120 M120 60 V140 M120 60 H200 M200 60 V100 H280" stroke="url(#gCopper)" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="120" cy="100" r="6" fill="#e8a86a"/>
+    <rect x="190" y="88" width="28" height="24" rx="2" stroke="#8aa4b8" stroke-width="1.5"/>
+    <text x="40" y="170" fill="#6b8496" font-family="ui-monospace, monospace" font-size="12">R1 / R2 divider · Gate_Circuit_lite</text>
+  </g>
+
+  <!-- PCB stage -->
+  <g transform="translate(560 280)" opacity="0.95">
+    <text x="0" y="-24" fill="#8aa4b8" font-family="ui-monospace, monospace" font-size="14" letter-spacing="0.12em">02 · PCB</text>
+    <rect x="0" y="0" width="300" height="220" rx="4" fill="#1a3a2e" stroke="#3d7a62" stroke-width="1.5"/>
+    <path d="M30 40 H270 M30 80 H180 M180 80 V160 M40 160 H180" stroke="#4ecf9a" stroke-width="1.2" opacity="0.7"/>
+    <rect x="200" y="100" width="60" height="40" rx="2" fill="#0f241c" stroke="#4ecf9a"/>
+    <circle cx="60" cy="120" r="14" stroke="#e8a86a" stroke-width="1.5"/>
+    <circle cx="60" cy="120" r="4" fill="#e8a86a"/>
+    <text x="30" y="200" fill="#6b8496" font-family="ui-monospace, monospace" font-size="12">layout · fab package</text>
+  </g>
+
+  <!-- Enclosure stage -->
+  <g transform="translate(980 200)" opacity="0.95">
+    <text x="0" y="-24" fill="#8aa4b8" font-family="ui-monospace, monospace" font-size="14" letter-spacing="0.12em">03 · ENCLOSURE</text>
+    <path d="M40 40 L220 40 L250 80 L250 220 L20 220 L20 80 Z" fill="#1c222a" stroke="url(#gSteel)" stroke-width="2"/>
+    <rect x="70" y="90" width="120" height="70" rx="6" stroke="#e8a86a" stroke-width="1.5" fill="#121820"/>
+    <circle cx="100" cy="125" r="8" fill="#4ecf9a" opacity="0.8"/>
+    <circle cx="160" cy="125" r="8" fill="#c47a45" opacity="0.8"/>
+    <text x="40" y="250" fill="#6b8496" font-family="ui-monospace, monospace" font-size="12">portable · temp + humidity</text>
+  </g>
+
+  <!-- Flow arrows -->
+  <path d="M460 320 C500 320 520 360 540 380" stroke="#c47a45" stroke-width="2" stroke-dasharray="6 6" opacity="0.7"/>
+  <path d="M880 360 C920 340 940 300 960 280" stroke="#c47a45" stroke-width="2" stroke-dasharray="6 6" opacity="0.7"/>
+</svg>

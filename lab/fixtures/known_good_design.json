@@ -1,0 +1,26 @@
+{
+  "fixture": "circuit.known_good",
+  "expected_gate": "Gate_Circuit_lite",
+  "expected_status": "PASS",
+  "notes": "Ratio ~0.303 places 3.3 V sensor span near 1.0 V ADC full scale; E96 values; impedance under 10 kΩ.",
+  "design": {
+    "topology": "resistive_divider",
+    "v_in_min_v": 0.0,
+    "v_in_max_v": 3.3,
+    "v_adc_min_v": 0.0,
+    "v_adc_max_v": 1.0,
+    "accuracy_pct": 2.0,
+    "max_zout_ohm": 10000,
+    "resistor_series": "E96",
+    "r1_ohms": 22100,
+    "r2_ohms": 9760,
+    "r_tolerance_pct": 1.0,
+    "buffer": false
+  },
+  "expected_checks": {
+    "adc_window": "PASS",
+    "impedance": "PASS",
+    "series": "PASS",
+    "bom_fields": "PASS"
+  }
+}

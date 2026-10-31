@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gate_Circuit_lite — A1 Workshop</title>
+    <meta
+      name="description"
+      content="Interactive Gate_Circuit_lite demo: open, lab, validation, and human review for the A1 Workshop hybrid delivery model."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="lab-page">
+    <header class="site-header" style="position: relative">
+      <div class="wrap">
+        <a class="wordmark" href="../">A1 <span>Workshop</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../#program">Proposal</a>
+          <a href="../#delivery">Delivery</a>
+          <a href="gate-lite.html" aria-current="page">Gate demo</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="lab-banner">
+      <div class="wrap">
+        <strong>Demo</strong> — classroom / online web activity · not the full curriculum · Track A
+        style: Open → Lab → Gate → Human review
+      </div>
+    </div>
+
+    <div class="wrap lab-title-block">
+      <h1>Gate_Circuit_lite</h1>
+      <p>
+        Validate resistor-divider math for the Environmental Monitor front-end. The agent proposes
+        values; you run the gate; a human records Approve or Reject.
+      </p>
+    </div>
+
+    <div class="wrap lab-grid">
+      <!-- OPEN -->
+      <section class="lab-panel" id="open" aria-labelledby="open-title">
+        <h2 id="open-title">
+          <span class="step">01 · Open</span>
+          Instructor brief
+        </h2>
+        <p>
+          <strong style="color: var(--ink)">Goal:</strong> Prove the conditioned sensor voltage lands
+          inside the ADC window without editing the checker to force a pass.
+        </p>
+        <p>
+          <strong style="color: var(--ink)">Why this gate:</strong> Agents invent numbers. The harness
+          recomputes divider ratio, impedance, and series membership independently of the LLM.
+        </p>
+        <p style="margin-bottom: 0.5rem"><strong style="color: var(--ink)">Done when:</strong></p>
+        <ul class="checklist">
+          <li>You ran the gate on a design (not the LLM grading itself)</li>
+          <li>You observed known-bad fail <code>adc_window</code></li>
+          <li>You recorded Approve or Reject in the audit log</li>
+        </ul>
+      </section>
+
+      <!-- LAB -->
+      <section class="lab-panel" id="lab" aria-labelledby="lab-title">
+        <h2 id="lab-title">
+          <span class="step">02 · Lab</span>
+          design.json
+        </h2>
+        <p>Edit the divider, or load a fixture. Topology is fixed to resistive_divider for this demo.</p>
+        <form id="design-form" autocomplete="off">
+          <div class="form-grid">
+            <label>
+              r1_ohms
+              <input name="r1_ohms" type="number" step="any" required />
+            </label>
+            <label>
+              r2_ohms
+              <input name="r2_ohms" type="number" step="any" required />
+            </label>
+            <label>
+              v_in_min_v
+              <input name="v_in_min_v" type="number" step="any" />
+            </label>
+            <label>
+              v_in_max_v
+              <input name="v_in_max_v" type="number" step="any" />
+            </label>
+            <label>
+              v_adc_min_v
+              <input name="v_adc_min_v" type="number" step="any" />
+            </label>
+            <label>
+              v_adc_max_v
+              <input name="v_adc_max_v" type="number" step="any" />
+            </label>
+            <label>
+              accuracy_pct
+              <input name="accuracy_pct" type="number" step="any" />
+            </label>
+            <label>
+              max_zout_ohm
+              <input name="max_zout_ohm" type="number" step="any" />
+            </label>
+            <label>
+              resistor_series
+              <select name="resistor_series">
+                <option value="E96">E96</option>
+                <option value="E24">E24</option>
+              </select>
+            </label>
+            <label>
+              r_tolerance_pct
+              <input name="r_tolerance_pct" type="number" step="any" />
+            </label>
+            <label class="span-2 check-row" style="flex-direction: row; margin-top: 0">
+              <input name="bom_listed" type="checkbox" checked />
+              bom_fields — design resistors listed in BOM
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn--small btn--ghost" id="load-good">Load known-good</button>
+            <button type="button" class="btn btn--small btn--ghost" id="load-bad">Load known-bad</button>
+            <button type="submit" class="btn btn--small btn--primary">Run gate</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- GATE -->
+      <section class="lab-panel" id="gate" aria-labelledby="gate-title">
+        <h2 id="gate-title">
+          <span class="step">03 · Gate</span>
+          Deterministic validation
+        </h2>
+        <p class="gate-status is-idle" id="gate-status" aria-live="polite">IDLE — run the gate</p>
+        <ul class="checks" id="checks"></ul>
+        <div class="metrics" id="metrics" hidden></div>
+      </section>
+
+      <!-- HUMAN REVIEW -->
+      <section class="lab-panel" id="review" aria-labelledby="review-title">
+        <h2 id="review-title">
+          <span class="step">04 · Human review</span>
+          Engineer sign-off
+        </h2>
+        <p>
+          The agent never self-approves release. Record Approve or Reject — same contract as
+          <code style="font-family: var(--font-mono); font-size: 0.85em">audit_log.jsonl</code>.
+        </p>
+        <textarea
+          class="review-note"
+          id="review-note"
+          placeholder="Optional note (e.g. peer review, waiver, reject reason)"
+        ></textarea>
+        <div class="review-actions">
+          <button type="button" class="btn btn--pass" id="approve" disabled>Approve</button>
+          <button type="button" class="btn btn--fail" id="reject" disabled>Reject</button>
+        </div>
+        <div class="audit" id="audit" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div>
+          <a href="../">← Back to proposal</a>
+        </div>
+        <div>A1 Workshop · Gate_Circuit_lite web activity demo</div>
+      </div>
+    </footer>
+
+    <script src="gate-lite.js" type="module"></script>
+  </body>
+</html>
