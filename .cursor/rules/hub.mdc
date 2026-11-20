@@ -19,12 +19,19 @@ Standing repo law: [`AGENTS.md`](../../AGENTS.md).
 - Link live course Pages: `/a1-inventor/`, `/almost-open/`.
 - Gate demo: redirect to course Pages; do not resurrect a full local gate demo here.
 
-## Inventor brochure
+## Home workshops list
 
-- Use **weeks** language (15-week spine). Do not restore Track A/B/C ladder copy.
+- Nav: Workshops → `#workshops` only (no per-workshop tabs).
+- Section heading: Workshops — no “Two paths” / monorepo prompt copy.
+- Card titles: **AI Driven Invention**, **How To Make (almost) Anything**.
+
+## Inventor brochure (`/inventor/`)
+
+- Brand as **AI Driven Invention**. Use **weeks** language (15-week spine). Do not restore Track A/B/C ladder copy.
+- Nav: Workshops + Course (+ Weeks / Gate) — not a lone Inventor tab.
 - CTAs point at the live course weeks index / week 1 and the course gate demo.
 
 ## Visual
 
-- Keep the light almost-open token set (teal accent, reading-first type).
-- One job per section; avoid dashboard clutter on the home and Inventor pages.
+- Keep the light course-site token set (teal accent, reading-first type).
+- One job per section; avoid dashboard clutter on the home and brochure pages.

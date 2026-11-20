@@ -8,13 +8,15 @@ Public brochure HTML is not Cursor instructions. Standing policy lives here and 
 
 - This repo is the **org brochure** only. Do **not** vendor course trees from `a1-inventor` or `almost-open`.
 - Curriculum SSOTs stay in sibling repos; link their live Pages URLs.
+- Public workshop titles: **AI Driven Invention** (`a1-inventor`) and **How To Make (almost) Anything** (`almost-open`).
+- Header nav is Workshops-first — do not restore per-workshop top tabs on the home page.
 - Inventor gate demo SSOT is `https://a1-workshop.github.io/a1-inventor/lab/gate-lite.html`. Keep thin redirects at `/lab/gate-lite.html` and `/inventor/lab/gate-lite.html`.
-- Keep `/inventor/` as the Inventor brochure (weeks language, not Track ladder).
+- Keep `/inventor/` as the AI Driven Invention brochure (weeks language, not Track ladder).
 - Static HTML/CSS only — no Eleventy in this repo.
 
 ## Brand / visual
 
-- Light reading-first theme aligned with almost-open (teal accent, Source Sans/Serif).
+- Light reading-first theme aligned with the course sites (teal accent, Source Sans/Serif).
 - Independent A1 Workshop brand — no third-party affiliation language.
 
 ## Scoped rules

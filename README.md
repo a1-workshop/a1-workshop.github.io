@@ -8,9 +8,9 @@ Org root GitHub Pages site for **A1 Workshop**: a multi-workshop brochure.
 
 | Path / URL | Workshop |
 |------------|----------|
-| [a1-inventor course](https://a1-workshop.github.io/a1-inventor/) | AI-Powered Inventor — open self-paced curriculum |
-| [`/inventor/`](https://a1-workshop.github.io/inventor/) | Inventor brochure (gate demo redirects to the course) |
-| [almost-open](https://a1-workshop.github.io/almost-open/) | How To Make (almost) Anything, Open |
+| [a1-inventor course](https://a1-workshop.github.io/a1-inventor/) | **AI Driven Invention** (repo `a1-inventor`) |
+| [`/inventor/`](https://a1-workshop.github.io/inventor/) | AI Driven Invention brochure (gate demo redirects to the course) |
+| [almost-open](https://a1-workshop.github.io/almost-open/) | **How To Make (almost) Anything** (repo `almost-open`) |
 
 Curriculum SSOTs stay in sibling repos. This hub does **not** vendor course trees.
 
