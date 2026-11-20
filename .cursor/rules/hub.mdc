@@ -1,0 +1,30 @@
+---
+description: Authoring rules for the A1 Workshop org hub brochure
+globs:
+  - "*.html"
+  - styles.css
+  - inventor/**/*
+  - lab/**/*
+  - README.md
+alwaysApply: false
+---
+
+# Org hub authoring
+
+Standing repo law: [`AGENTS.md`](../../AGENTS.md).
+
+## Brochure only
+
+- Do not vendor `course/` from sibling repos.
+- Link live course Pages: `/a1-inventor/`, `/almost-open/`.
+- Gate demo: redirect to course Pages; do not resurrect a full local gate demo here.
+
+## Inventor brochure
+
+- Use **weeks** language (15-week spine). Do not restore Track A/B/C ladder copy.
+- CTAs point at the live course weeks index / week 1 and the course gate demo.
+
+## Visual
+
+- Keep the light almost-open token set (teal accent, reading-first type).
+- One job per section; avoid dashboard clutter on the home and Inventor pages.
