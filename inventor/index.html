@@ -18,7 +18,7 @@
         <nav class="nav" aria-label="Primary">
           <a href="./" aria-current="page">Inventor</a>
           <a href="https://a1-workshop.github.io/a1-inventor/">Course</a>
-          <a href="#tracks">Tracks</a>
+          <a href="#weeks">Weeks</a>
           <a href="https://a1-workshop.github.io/a1-inventor/lab/gate-lite.html">Gate demo</a>
         </nav>
       </div>
@@ -60,43 +60,45 @@
         </div>
       </section>
 
-      <section class="section" id="tracks">
+      <section class="section" id="weeks">
         <div class="wrap">
-          <p class="section__eyebrow">Course ladder</p>
-          <h2 class="section__title">Three tracks. One product through-line.</h2>
+          <p class="section__eyebrow">Course spine</p>
+          <h2 class="section__title">Fifteen weeks. One product through-line.</h2>
           <p class="section__lead">
-            Track A is the gateway. Earn the mental model before later tracks feel like magic.
+            Week 1 builds the mental model and
+            <code style="font-family: var(--font-mono); font-size: 0.85em">Gate_Circuit_lite</code>.
+            Weeks 2–15 carry the same Environmental Monitor through circuit, PCB, enclosure, software,
+            and release — later weeks are stubs until content lands.
           </p>
           <div class="tracks">
             <article class="track">
-              <div class="track__id">A</div>
+              <div class="track__id">1</div>
               <div>
-                <h3 class="track__name">Agentic Engineering Foundations</h3>
-                <p class="track__meta">Self-paced · ~3.5 hours hands-on</p>
+                <h3 class="track__name">Foundations</h3>
+                <p class="track__meta">Ready · ~3.5 hours</p>
               </div>
               <p class="track__outcome">
-                Models vs assistants vs agents vs harnesses;
-                <code style="font-family: var(--font-mono); font-size: 0.85em">Gate_Circuit_lite</code>.
+                Models vs agents vs harnesses; pass Gate_Circuit_lite with human sign-off.
               </p>
             </article>
             <article class="track">
-              <div class="track__id">B</div>
+              <div class="track__id">2–5</div>
               <div>
-                <h3 class="track__name">AI-Augmented Engineering</h3>
-                <p class="track__meta">4-week bridge</p>
+                <h3 class="track__name">Circuit → PCB → enclosure</h3>
+                <p class="track__meta">Stub weeks</p>
               </div>
               <p class="track__outcome">
-                Circuit → PCB → enclosure with real tools and shared validation gates.
+                Real tools and shared gates: Gate_Circuit_full, Gate_PCB, Gate_Enclosure.
               </p>
             </article>
             <article class="track">
-              <div class="track__id">C</div>
+              <div class="track__id">6–15</div>
               <div>
-                <h3 class="track__name">AI-Powered Inventor</h3>
-                <p class="track__meta">10-week spine</p>
+                <h3 class="track__name">System → release</h3>
+                <p class="track__meta">Stub weeks</p>
               </div>
               <p class="track__outcome">
-                Full invention package: software, HIL, documentation, and presentation.
+                Firmware, HIL, packaging, docs, presentation — Gate_System through RELEASED.
               </p>
             </article>
           </div>
@@ -104,15 +106,19 @@
             Through-line: <strong>Environmental Monitor</strong> — temperature + humidity — circuit →
             PCB → enclosure → system.
           </p>
+          <p style="margin-top: 1.5rem">
+            <a class="btn btn--primary" href="https://a1-workshop.github.io/a1-inventor/weeks/">Browse weeks</a>
+            <a class="btn btn--ghost" href="https://a1-workshop.github.io/a1-inventor/weeks/01/">Start week 1</a>
+          </p>
         </div>
       </section>
 
       <section class="section" id="delivery">
         <div class="wrap">
           <p class="section__eyebrow">How you learn</p>
-          <h2 class="section__title">Self-paced. Same loop every phase.</h2>
+          <h2 class="section__title">Self-paced. Same loop every week.</h2>
           <p class="section__lead">
-            Work through exercises with your own LLM and portable agent packs. Web activities use the
+            Work through weeks with your own LLM and portable agent packs. Web activities use the
             same gates — no proprietary IDE required.
           </p>
           <div class="phases">
@@ -122,7 +128,7 @@
             </div>
             <div class="phase">
               <h3>Lab</h3>
-              <p>Follow the exercise, run the agent pack, produce design artifacts.</p>
+              <p>Follow the week, run the agent pack, produce design artifacts.</p>
             </div>
             <div class="phase">
               <h3>Validate</h3>
