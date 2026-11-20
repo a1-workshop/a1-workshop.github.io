@@ -956,6 +956,73 @@ a:hover {
   max-width: 52ch;
 }
 
+/* —— Org hub workshops —— */
+
+.workshops {
+  display: grid;
+  gap: 0;
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.workshop {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s var(--ease);
+}
+
+@media (min-width: 720px) {
+  .workshop {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 1.5rem 2rem;
+  }
+}
+
+.workshop:hover .workshop__name {
+  color: var(--copper-bright);
+}
+
+.workshop__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper-bright);
+  margin: 0 0 0.35rem;
+}
+
+.workshop__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin: 0;
+  color: var(--ink);
+  transition: color 0.2s var(--ease);
+}
+
+.workshop__blurb {
+  margin: 0.5rem 0 0;
+  max-width: 42ch;
+  color: var(--ink-muted);
+  font-size: 0.975rem;
+}
+
+.workshop__cta {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--steel);
+  white-space: nowrap;
+}
+
+.workshop:hover .workshop__cta {
+  color: var(--copper-bright);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
